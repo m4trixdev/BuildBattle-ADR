@@ -1,5 +1,5 @@
 name: BuildBattle
-version: 1.5.0
+version: 1.6.0
 main: br.com.m4trixdev.Main
 api-version: '1.21'
 author: M4trixDev
@@ -17,4 +17,7 @@ permissions:
     default: op
   buildbattle.staff:
     description: Pode deletar construcoes durante a votacao
-    default: false
+    default: op
+  buildbattle.bypass:
+    description: Nao entra como participante do evento, apenas observa e vota se tiver OP
+    default: op

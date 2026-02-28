@@ -61,20 +61,23 @@ public class EventManager {
         List<Location> centers = plugin.getPlotManager().scanForPlots(pos1, pos2, mat);
         if (centers.isEmpty()) return Phase1Result.NO_PLOTS_FOUND;
 
-        List<Player> online = new ArrayList<>(Bukkit.getOnlinePlayers());
-        if (online.isEmpty()) return Phase1Result.NO_PLAYERS;
-        if (centers.size() < online.size()) return Phase1Result.NOT_ENOUGH_PLOTS;
+        List<Player> contestants = new ArrayList<>();
+        for (Player p : Bukkit.getOnlinePlayers()) {
+            if (!p.hasPermission("buildbattle.bypass")) contestants.add(p);
+        }
+        if (contestants.isEmpty()) return Phase1Result.NO_PLAYERS;
+        if (centers.size() < contestants.size()) return Phase1Result.NOT_ENOUGH_PLOTS;
 
         plugin.getPlotManager().buildPlots(centers, mat);
-        plugin.getPlotManager().assign(online);
+        plugin.getPlotManager().assign(contestants);
 
         participants.clear();
-        for (Player p : online) participants.add(p.getUniqueId());
+        for (Player p : contestants) participants.add(p.getUniqueId());
 
         theme = (chosenTheme != null && !chosenTheme.isBlank()) ? chosenTheme : "";
         state = EventState.PHASE_1;
 
-        for (Player p : online) {
+        for (Player p : contestants) {
             Plot plot = plugin.getPlotManager().plotOf(p.getUniqueId());
             if (plot == null) continue;
             p.setGameMode(GameMode.ADVENTURE);
@@ -195,7 +198,7 @@ public class EventManager {
 
         Location dest = spawnOnPlot(plot.getCenter());
         for (Player p : Bukkit.getOnlinePlayers()) {
-            if (!plot.isOwner(p.getUniqueId())) p.teleport(dest);
+            p.teleport(dest);
         }
     }
 

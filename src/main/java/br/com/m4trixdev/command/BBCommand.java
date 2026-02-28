@@ -226,7 +226,7 @@ public class BBCommand implements CommandExecutor, TabCompleter {
         sender.sendMessage(ColorUtil.c("&e/bb start 1 [tema] &7- Escaneia area e teleporta jogadores"));
         sender.sendMessage(ColorUtil.c("&e/bb start 2 &7- Inicia a construcao"));
         sender.sendMessage(ColorUtil.c("&e/bb start 3 &7- Inicia a votacao (8s por plot)"));
-        sender.sendMessage(ColorUtil.c("&e/bb start 4 &7- Finaliza e anuncia top 3"));
+        sender.sendMessage(ColorUtil.c("&e/bb start 4  &7- Finaliza e anuncia top 3"));
         sender.sendMessage(ColorUtil.c("&e/bb stop &7- Para o evento imediatamente"));
         sender.sendMessage(ColorUtil.c("&e/bb info &7- Informacoes do evento"));
         sender.sendMessage(ColorUtil.c("&e/bb reload &7- Recarrega config.yml"));
