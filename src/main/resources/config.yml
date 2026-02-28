@@ -1,0 +1,49 @@
+event:
+  build-time: 1800
+  vote-time: 8
+  plot-size: 25
+
+protection:
+  block-tnt: true
+  block-lava: true
+  block-water: true
+
+scoreboard:
+  enabled: true
+  title: "&6&lBuild Battle"
+  lines:
+    - "&7Tema: &f%theme%"
+    - " "
+    - "&7Estado: %state%"
+    - "&7Tempo: &f%time%"
+    - " "
+    - "&7Seu plot: &f%plot%"
+    - " "
+    - "&7Construtor: &f%builder%"
+    - "  "
+    - "&em4trixdev.com.br"
+
+messages:
+  prefix: "&6[BB] &r"
+  phase1-start: "&aJogadores teleportados para os plots!"
+  phase2-start: "&aConstrução iniciada! Tema: &f%theme%"
+  phase2-title: "&a&lConstrução Iniciada!"
+  phase2-subtitle: "&7Tema: &f%theme%"
+  phase3-start: "&eVotação iniciada!"
+  next-plot: "&eAvaliando (%i%/%total%): &f%player%"
+  vote-ok: "&aVoto registrado: &f%score% pontos"
+  already-voted: "&cVocê já votou neste plot."
+  own-plot: "&cVocê não pode votar no próprio plot."
+  no-permission: "&cSem permissão."
+  deleted: "&cConstrução de &f%player% &cdeletada."
+  voting-done: "&aVotação encerrada! Use /bb start 4 para anunciar o resultado."
+  phase4-start: "&6&lResultado Final:"
+  top1: "&6#1 &f%player% &7- &e%pts% pts"
+  top2: "&7#2 &f%player% &7- &e%pts% pts"
+  top3: "&c#3 &f%player% &7- &e%pts% pts"
+  spawn-set: "&aSpawn salvo."
+  stopped: "&cEvento encerrado."
+  no-spawn: "&cSpawn não configurado. Use /bb set spawn."
+  no-plots: "&cNenhum bloco do material cadastrado foi encontrado na área."
+  outside: "&cFique dentro do seu plot!"
+  time-up: "&c&lTempo esgotado!"

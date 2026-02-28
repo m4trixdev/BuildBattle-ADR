@@ -1,0 +1,20 @@
+name: BuildBattle
+version: 1.5.0
+main: br.com.m4trixdev.Main
+api-version: '1.21'
+author: M4trixDev
+description: Plugin de evento Build Battle
+
+commands:
+  bb:
+    description: Comando principal do Build Battle
+    usage: /bb <set|start|stop|info|reload>
+    permission: buildbattle.admin
+
+permissions:
+  buildbattle.admin:
+    description: Acesso total ao Build Battle
+    default: op
+  buildbattle.staff:
+    description: Pode deletar construcoes durante a votacao
+    default: false
